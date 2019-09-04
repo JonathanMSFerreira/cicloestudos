@@ -1,4 +1,5 @@
 import 'package:cicloestudos/screens/NewCicloEstudo.dart';
+import 'package:cicloestudos/screens/CicloEstudo.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -66,6 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           IconButton(icon: Icon(Icons.menu), onPressed: () {},),
           IconButton(icon: Icon(Icons.search), onPressed: () {},),
+          IconButton(icon: Icon(Icons.show_chart), onPressed: () {},),
+          IconButton(icon: Icon(Icons.share), onPressed: () {},),
         ],
       ),
     ),
@@ -104,18 +107,38 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget CicloCard(){
 
-    return Card(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          const ListTile(
-            leading: Icon(Icons.album, size: 50),
-            title: Text('Heart Shaker'),
-            subtitle: Text('TWICE'),
+    return
+
+      GestureDetector(
+        child:     Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+
+
+
+              const ListTile(
+                leading: Icon(Icons.album, size: 50),
+                title: Text('Concurso do TJMA'),
+                subtitle: Text('Criado em 04/09/2019'),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
+        ), onLongPress: (){
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>  CicloEstudo()),
+        );
+
+
+
+            },
+
+      )
+
+
+  ;
 
 
 
